@@ -11,7 +11,7 @@ import UserProfile from './components/UserProfile'
 function App() {
   return (
      <>
-      <WelcomeMessage/>
+      <WelcomeMessage></WelcomeMessage>
       <Header/>
       <MainContent/>
       <Footer/> 
