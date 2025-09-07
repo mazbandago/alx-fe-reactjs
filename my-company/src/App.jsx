@@ -1,25 +1,25 @@
-import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './assets/pages/Home';
-import About from './assets/pages/About';
-import Contact from './assets/pages/Contact';
-import Service from './assets/pages/Service';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Footer from './components/Footer'; // optional
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
-    <main>
+      <Navbar />
       <Routes>
-        <Route path = "/" element ={<Home />}/>
-        <Route path = "About" element ={<About />}/>
-        <Route path = "Contact" element ={< Contact />}/>
-        <Route path = "Service" element ={< Service />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </main>
+      <Footer />
     </BrowserRouter>
-    
-  )
+  );
 }
+
 export default App;
