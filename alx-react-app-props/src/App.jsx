@@ -12,6 +12,7 @@ import  UserContext  from './components/UserContext';
 
 function App() {
 const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+const myData = {name:'Alice', age:'25', bio :'Loves hiking and photography' }
   return (
      <>
      <UserContext.Provider value = {{userData}}>
@@ -21,7 +22,9 @@ const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name='Alice' age='25' bio='Loves hiking and photography' />
+      <UserContext.Provider value ={{myData}}>
+      <UserProfile />
+      </UserContext.Provider>
       
      </>
   )
