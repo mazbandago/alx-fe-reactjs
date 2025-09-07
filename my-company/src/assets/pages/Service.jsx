@@ -1,9 +1,9 @@
-import Navbar from "../Navbar";
+import Navbar from "../../components/Navbar";
 
 function Services() {
      return (
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
        <div style={{ padding: '20px' }}>
          <h1>Our Services</h1>
          <ul>
