@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Navbar from '../../components/Navbar';
 
    function Contact() {
      const [formData, setFormData] = useState({
@@ -18,8 +17,6 @@ import Navbar from '../../components/Navbar';
      };
 
      return (
-        <>
-        {/* <Navbar/> */}
        <div style={{ padding: '20px' }}>
          <h1>Contact Us</h1>
          <form onSubmit={handleSubmit}>
@@ -49,7 +46,6 @@ import Navbar from '../../components/Navbar';
            <button type="submit">Send Message</button>
          </form>
        </div>
-        </>
      );
    }
 

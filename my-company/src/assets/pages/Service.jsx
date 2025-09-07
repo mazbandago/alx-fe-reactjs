@@ -1,9 +1,5 @@
-import Navbar from "../../components/Navbar";
-
 function Services() {
      return (
-        <>
-        {/* <Navbar/> */}
        <div style={{ padding: '20px' }}>
          <h1>Our Services</h1>
          <ul>
@@ -12,7 +8,6 @@ function Services() {
            <li>Product Development</li>
          </ul>
        </div>
-        </>
      );
    }
 
