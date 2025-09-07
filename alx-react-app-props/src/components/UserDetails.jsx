@@ -1,6 +1,7 @@
 import React from 'react'
-import { useContext } from 'react'
-import { UserContext } from './UserContext'
+import { useContext} from 'react'
+import UserContext from './UserContext'
+
 
 
 
