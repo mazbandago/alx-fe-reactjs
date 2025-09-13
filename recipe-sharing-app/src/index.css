@@ -1,0 +1,13 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form input,textarea,button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
