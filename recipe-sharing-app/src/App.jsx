@@ -1,4 +1,6 @@
 import React from 'react'
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 import SearchBar from './components/SearchBar';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
@@ -15,6 +17,8 @@ function App() {
       <Routes>
       <Route path='/' element = {<RecipeList />} />
       <Route path ="/recipes/:id" element ={<RecipeDetailsWrapper />} />
+      <FavoritesList />
+      <RecommendationsList />
       </Routes>
 
     </div>
