@@ -11,7 +11,7 @@ const FavoritesList = () => {
       {favorites.length === 0 ? (
         <p>No favorites yet.</p>
       ) : (
-      favorites.map(recipe) => (
+      favorites.map(recipe)(
         <div key={recipe.id}>
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
