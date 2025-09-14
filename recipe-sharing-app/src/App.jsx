@@ -17,7 +17,8 @@ function App() {
       <Routes>
       <Route path='/' element = {<RecipeList />} />
       <Route path ="/recipes/:id" element ={<RecipeDetailsWrapper />} />
-      <FavoritesList />
+      <Route path = "favoriteList" element ={<favoriteList />},
+    
       <RecommendationsList />
       </Routes>
 
