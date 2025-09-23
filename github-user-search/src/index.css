@@ -1,1 +1,67 @@
-
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(5, 12, 12);
+    padding: 10px;
+}
+nav a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover{
+    border-bottom-color: brown;
+    color: aqua;
+    transition: all .5s linear;
+}
+/* CSS FOR THE FORM */
+.cont{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    /* align-items: center; */
+}
+.cont label{
+    font-weight: bold;
+    margin: 10px;
+    
+}
+.cont input{
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-bottom: 2px solid black;
+    /* width: 400px; */
+}
+.cont button{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+}
+.cont button:hover{
+    background-color: brown;
+    border: none;
+}
+/* css for error page */
+.err{
+    padding: 15px;
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-align: center;
+    width: 500px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
