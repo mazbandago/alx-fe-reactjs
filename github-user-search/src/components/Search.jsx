@@ -1,31 +1,24 @@
 import React from 'react'
 import { useState } from 'react';
 import { fetchUserData } from '../services/githubService';
-
+import { useQuery } from "@tanstack/react-query";
 
 function Search() {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [submittedUsername, setSubmittedUsername] = useState("");
 
-  const handleSubmit = async (e) => {
+ const { data, isLoading, isError } = useQuery({
+    queryKey: ["githubUser", submittedUsername],
+    queryFn: () => fetchUserData(submittedUsername),
+    enabled: !!submittedUsername, // Only run when there's input
+  });
+ 
+  
+   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
-    setUser(null);
-
-    try {
-      const data = await fetchUserData(username);
-      setUser(data);
-    
-    } catch (err) {
-      setError("Looks like we can't find the user");
-    } finally {
-      setLoading(false);
-    }
+    setSubmittedUsername(username.trim());
   };
-
+  
   return (
     <>
       <div className='form-div'>
@@ -35,13 +28,13 @@ function Search() {
           <button type ="submit">Submit</button>
         </form>
 
-        {loading && <p>Loading...</p>}
-        {error && <p className='err'>{error}</p>}
-        {user && (
+        {isLoading && <p>Loading...</p>}
+        {isError && <p className='err'>Looks like we can't find the user</p>}
+        {data && (
          <div className="user-card">
-           <img src={user.avatar_url} alt={user.login} width={100} />
-          <h2>{user.name || user.login}</h2>
-           <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+           <img src={data.avatar_url} alt={data.login} width={100} />
+          <h2>{data.name || data.login}</h2>
+           <a href={data.html_url} target="_blank" rel="noopener noreferrer">
              View Profile
            </a>
          </div>
