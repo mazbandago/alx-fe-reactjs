@@ -11,6 +11,7 @@ function Search() {
     queryKey: ["githubUser", submittedUsername],
     queryFn: () => fetchUserData(submittedUsername),
     enabled: !!submittedUsername, // Only run when there's input
+    staleTime: 1000 * 60 * 5, // 5 minutes
   });
  
   
@@ -29,7 +30,7 @@ function Search() {
         </form>
 
         {isLoading && <p>Loading...</p>}
-        {isError && <p className='err'>Looks like we can't find the user</p>}
+        {isError && <p className='err'>"Looks like we can't find the user"</p>}
         {data && (
          <div className="user-card">
            <img src={data.avatar_url} alt={data.login} width={100} />
