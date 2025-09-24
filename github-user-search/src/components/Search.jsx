@@ -28,10 +28,10 @@ function Search() {
   
   return (
     <>
-      <div className='form-div'>
-        <form className='cont' onSubmit ={handleSubmit}>
+      <div className='form-div p-4 max-w-xl mx-auto" '>
+        <form className= "space-y-4" onSubmit ={handleSubmit}>
           <label htmlFor="usernames">Github Username</label>
-          <input type="text" id='usernames' value={username} placeholder='Enter your Github username Here' onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" id='usernames' value={username} placeholder='Enter your Github username Here' onChange={(e) => setUsername(e.target.value)} className="w-full p-2 border rounded" />
         <label htmlFor="location">Location</label>
         <input
           type="text"
@@ -39,7 +39,7 @@ function Search() {
           value={location}
           placeholder="e.g. Ghana"
           onChange={(e) => setLocation(e.target.value)}
-          // className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded"
         />
         <label htmlFor="minRepos">Minimum Repositories</label>
         <input
@@ -48,20 +48,20 @@ function Search() {
           value={minRepos}
           placeholder="e.g. 10"
           onChange={(e) => setMinRepos(e.target.value)}
-          // className="w-full p-2 border rounded"
+          className="w-full p-2 border rounded"
         />
-          <button type ="submit">Submit</button>
+          <button type ="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
         </form>
 
-        {isLoading && <p style={{marginTop: "16px"}}>Loading...</p>}
-        {isError && <p className='err'>"Looks like we can't find the user"</p>}
+        {isLoading && <p className="mt-4">Loading...</p>}
+        {isError && <p className="mt-4 text-red-500">"Looks like we can't find the user"</p>}
         {users && users.length > 0 && (
-         <div style={{marginTop:"24px", display:'grid', gap:"16px"}}>
+         <div className="mt-6 grid gap-4">
           {users.map((user) => (
-            <div key ={user.id}className='user-card'>
-              <img src={user.avatar_url} alt={user.login} style={{width:"100px", height:"100px", borderRadius:"50px"}} />
-              <h2 style={{fontSize:"18px", fontWeight:"bold"}}>{user.name || user.login}</h2>
-              <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+            <div key ={user.id} className="user-card p-4 border rounded shadow">
+              <img src={user.avatar_url} alt={user.login} className="w-20 h-20 rounded-full"/>
+              <h2 className="text-lg font-semibold">{user.name || user.login}</h2>
+              <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline" >
                 View Profile
               </a>
             </div>
