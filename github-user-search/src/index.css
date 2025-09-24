@@ -54,6 +54,7 @@ nav a:hover{
 }
 /* css for error page */
 .err{
+    background-color: white;
     padding: 15px;
     margin: 10px;
     border: 2px solid gray;
@@ -64,4 +65,28 @@ nav a:hover{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+/* CSS FOR USER DISPLAY INFO */
+.user-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: white;
+    /* width: 400px; */
+   border-radius: 10px;
+   box-shadow: 9px 11px 19px -1px rgba(61,35,35,0.75);
+-webkit-box-shadow: 9px 11px 19px -1px rgba(61,35,35,0.75);
+-moz-box-shadow: 9px 11px 19px -1px rgba(61,35,35,0.75);
+}
+
+/* CSS FOR APP CONTAINER */
+.app-cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aquamarine;
+    height: 800px;
 }

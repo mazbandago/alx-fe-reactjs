@@ -1,8 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import { fetchUserData } from '../services/githubService';
-import App from '../App';
-import Navbar from './Navbar';
 
 
 function Search() {
@@ -18,7 +16,7 @@ function Search() {
     setUser(null);
 
     try {
-      const data = await fetchUserData(mazbandago);
+      const data = await fetchUserData(username);
       setUser(data);
     
     } catch (err) {
@@ -30,7 +28,6 @@ function Search() {
 
   return (
     <>
-      <Navbar />
       <div className='form-div'>
         <form className='cont' onSubmit ={handleSubmit}>
           <label htmlFor="usernames">Github Username</label>
@@ -50,7 +47,6 @@ function Search() {
          </div>
       )}
       </div>
-      <App />
     </>
   )
 }

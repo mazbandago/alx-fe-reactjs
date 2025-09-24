@@ -1,13 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import Search from "./components/Search";
 import AboutPage from "./components/AboutPage";
-
+import App from "./App";
 
 
 const router = createBrowserRouter([
     {
         path:"/",
-        Component: Search
+        Component: App
     },
     {
         path:"/About",
