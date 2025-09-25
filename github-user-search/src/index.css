@@ -9,11 +9,24 @@
     margin: 0 auto;
 }
 nav{
-    display: flex;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 1.5rem; /* py-6 px-6 = 1.5rem vertical & horizontal */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(5, 12, 12);
-    padding: 10px;
+    padding: 10px; */
 }
 nav a{
     text-decoration: none;
@@ -74,6 +87,7 @@ CSS FOR THE FORM */
 } 
 /* CSS FOR USER DISPLAY INFO */
 .user-card{
+    gap: 5px;
     padding: 16px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -86,9 +100,10 @@ CSS FOR THE FORM */
 
 /* CSS FOR APP CONTAINER */
 .app-cont{
+    padding-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: aquamarine;
-    height: 2800px;
+    height: 1800px;
 }  

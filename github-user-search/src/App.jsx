@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
           Enter a username, location, or minimum repository count to find users. Results include basic info and profile links.
         </p>
         <Search />
+        
       </div>
+      <Footer />
     </>
   );
 }
