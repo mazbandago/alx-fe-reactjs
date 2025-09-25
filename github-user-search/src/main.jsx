@@ -4,6 +4,7 @@ import './index.css'
 import router from './crouting.js'
 import { RouterProvider } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import React from 'react';
 
 const queryClient = new QueryClient();
 

@@ -31,7 +31,7 @@ function Search() {
 
   return (
     <div className='form-div p-4 max-w-xl mx-auto'>
-      <form className="space-y-4" onSubmit={handleSubmit}>
+      <form className="cont" onSubmit={handleSubmit}>
         <label htmlFor="usernames">Github Username</label>
         <input
           type="text"
@@ -68,7 +68,7 @@ function Search() {
       </form>
 
       {isLoading && <p className="mt-4">Loading...</p>}
-      {isError && <p className="mt-4 text-red-500">Looks like we can't find the user</p>}
+      {isError && <p className="err">Looks like we can't find the user</p>}
       {users.length > 0 && (
         <div className="mt-6 grid gap-4">
           {users.map((user) => (
