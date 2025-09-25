@@ -1,4 +1,39 @@
 # React + Vite
+# GitHub User Search Application
+
+A responsive React-based web application that allows users to search for GitHub profiles using the GitHub API. Built as part of the ALX Front-End Web Development program, this project demonstrates API integration, advanced search capabilities, and deployment to Vercel.
+
+## 🚀 Project Overview
+
+This application enables users to:
+- Search for GitHub users by username.
+- View basic profile information including avatar, name, and profile link.
+- Perform advanced searches using filters like location and repository count.
+- Enjoy a clean, responsive UI styled with Tailwind CSS.
+
+## 🎯 Learning Objectives
+
+By completing this project, I gained hands-on experience in:
+- Setting up a React project for API integration.
+- Making HTTP requests using Axios.
+- Handling asynchronous data and conditional rendering.
+- Enhancing UI/UX with Tailwind CSS.
+- Deploying a production-ready app to Vercel.
+
+## 🛠 Tech Stack
+
+- **React** (Vite setup)
+- **Axios** for API requests
+- **Tailwind CSS** for styling
+- **GitHub API** for user data
+- **Vercel** for deployment
+
+## 📦 Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/github-user-search.git
+   cd github-user-search
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
