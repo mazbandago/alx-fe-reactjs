@@ -15,3 +15,7 @@ createRoot(document.getElementById('root')).render(
     </QueryClientProvider>
   </StrictMode>,
 )
+
+
+
+https://www.otriviata.com/api.php?amount=30
