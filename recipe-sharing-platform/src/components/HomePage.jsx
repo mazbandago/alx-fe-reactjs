@@ -20,13 +20,15 @@ function HomePage() {
     {loading && <p className='flex justify-center items-center text-5xl font-bold text-center my-5 min-h-screen rounded-xl border bg-blue-400 hover:bg-blue-600'>Loading...</p>}
     {recipes && recipes.length > 0 &&(
         recipes.map((recipe) =>(
-            <div className='container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+        
+          <div className='mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             <div key={recipe.id} className='p-4 mx-auto mb-4 max-w-sm bg-white border border-gray-200 rounded-lg/500 shadow-lg overflow-hidden transition-all transform duration-300 hover: scale-[1.02] hover:shadow-2xl hover:border-blue-500 cursor-pointer group'>
                 <h2 className='text-xl font-medium mb-2'>{recipe.title}</h2>
                 <p className='mb-2'>{recipe.summary}</p>
                 <img src={recipe.image} alt={recipe.tittle} className='w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 rounded-2xl border-2 mb-2' />
             </div>
-            </div>
+          </div>
+        
         ))
     )}
     </>
