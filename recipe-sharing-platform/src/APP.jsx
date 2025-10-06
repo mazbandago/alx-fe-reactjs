@@ -7,12 +7,12 @@ import RecipeDetail from './components/RecipeDetail';
 function App() {
   return (
     <div>
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/recipe/:id' element={<RecipeDetail/>}/>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   )
 }
