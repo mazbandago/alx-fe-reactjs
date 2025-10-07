@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import fetchRecipes from '../data.json'
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 function HomePage() {
     const[recipes,setRecipes] = useState([]);
@@ -12,11 +13,13 @@ function HomePage() {
             setRecipes(fetchRecipes)
             setloading(false);
         },1000)
-    },[])
+    },[]);
 
+    
 
   return (
     <>
+    <Navbar />
     <h1 className='p-4 mx-auto text-2xl font-bold sm:text-3xl text-center tracking-tight text-gray-900 transition-colors duration-300 group-hover:text-blue-600'>List of Recipes</h1>
     {loading && <p className='flex justify-center items-center text-5xl font-bold text-center my-5 min-h-screen rounded-xl border bg-blue-400 hover:bg-blue-600'>Loading...</p>}
     <div className='mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6'>
