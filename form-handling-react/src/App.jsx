@@ -1,8 +1,11 @@
 import React from 'react'
+import RegistrationForm from './components/RegistrationForm';
 
 function App() {
   return (
-    <h1>This is the App page</h1>
+    <div>
+      <RegistrationForm />
+    </div>
   )
 }
 
