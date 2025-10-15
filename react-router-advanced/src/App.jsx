@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
+import UserProfile from './components/UserProfile';
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/profile' element={<Profile />}>
-          <Route path='details' element={<ProfileDetails />} />
-          <Route path='settings' element={<ProfileSettings />} />
+          <Route path='details' element={<ProfileDetails/>}/>
+          <Route path='settings' element={<ProfileSettings/>}/>
         </Route>
+        <Route path='/profile/:userId' element={<UserProfile/>} />
       </Routes>
     </BrowserRouter>
   )
