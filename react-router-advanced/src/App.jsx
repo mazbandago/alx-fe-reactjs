@@ -5,13 +5,14 @@ import Profile from './components/Profile';
 import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
 import UserProfile from './components/UserProfile';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/profile' element={<Profile />}>
+        <Route path='/profile/*' element={<ProtectedRoute><Profile /></ProtectedRoute>}>
           <Route path='details' element={<ProfileDetails/>}/>
           <Route path='settings' element={<ProfileSettings/>}/>
         </Route>
