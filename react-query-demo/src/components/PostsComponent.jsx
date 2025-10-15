@@ -9,7 +9,7 @@ const fetchData = async ()=>{
 
 function PostsComponent() {
 
-const{data:fetchPosts,isLoading,error, isFetching,refetch} = useQuery({
+const{data:fetchPosts,isLoading,error, isError, isFetching,refetch} = useQuery({
     queryKey:['fetchData'],
     queryFn: fetchData,
     staleTime: 1000 * 60 * 5,
