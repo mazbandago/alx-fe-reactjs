@@ -9,11 +9,11 @@ const fetchData = async ()=>{
 
 function PostsComponent() {
 
-const{data:fetchPosts,isLoading,error, isError, isFetching,refetch} = useQuery({
+const{data:fetchPosts,isLoading,error, isError, isFetching,refetchOnWindowFocu, keepPreviousData} = useQuery({
     queryKey:['fetchData'],
     queryFn: fetchData,
     staleTime: 1000 * 60 * 5,
-    catchTime: 1000 * 60 * 10
+    cacheTime: 1000 * 60 * 10
     
 })
 
@@ -23,7 +23,7 @@ if (error) return <div>Error loading data</div>
 
   return (
     <div>
-      <button onClick={() => refetch()} disabled={isFetching}>
+      <button onClick={() => refetchOnWindowFocus()} disabled={isFetching}>
         {isFetching ? 'Refreshing...' : 'Refetch Posts'}
       </button>
 
