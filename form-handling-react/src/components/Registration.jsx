@@ -16,9 +16,9 @@ function Registration() {
 
   return (
    <form onSubmit={handleonSubmit}>
-    <input type="text" name="username" value={formData.username} onChange={handleonChange} />
-    <input type="email" name="email" value ={formData.email} onChange={handleonChange}/>
-    <input type="password"  name="password" value={formData.password} onChange={handleonChange}/>
+    <input type="text" name="username" value={formData.username} onChange={handleonChange}  required />
+    <input type="email" name="email" value ={formData.email} onChange={handleonChange} required/>
+    <input type="password"  name="password" value={formData.password} onChange={handleonChange} required/>
     <button type="submit">Submit</button>
    </form>
   )
