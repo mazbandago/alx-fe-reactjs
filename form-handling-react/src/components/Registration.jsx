@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function Registration() {
     const[formData, setFormData] = useState({username:"",email:"",password:""});
 
-    const handleonChange = ()=>{
+    const handleonChange = (e)=>{
         const{name, value} = e.value;
         setFormData(prevData =>({...prevData, [name]:value }))
     }
@@ -19,7 +19,7 @@ function Registration() {
     <input type="text" name="username" value={formData.username} onChange={handleonChange} />
     <input type="email" name="email" value ={formData.email} onChange={handleonChange}/>
     <input type="password"  name="password" value={formData.password} onChange={handleonChange}/>
-    <Button type="submit">Submit</Button>
+    <button type="submit">Submit</button>
    </form>
   )
 }
