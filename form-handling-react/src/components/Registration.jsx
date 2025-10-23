@@ -4,12 +4,12 @@ function Registration() {
     const[formData, setFormData] = useState({username:"",email:"",password:""});
 
     const handleonChange = (e)=>{
-        const{name, value} = e.value;
+        const{name, value} = e.target;
         setFormData(prevData =>({...prevData, [name]:value }))
     }
 
     const handleonSubmit = (e)=>{
-        e.preventDefaut()
+        e.preventDefault();
         console.log(formData)
         setFormData({username:"",email:"", password:""})
     }
