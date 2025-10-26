@@ -2,31 +2,40 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const validationSchema = Yup.object({
-    username: Yup.string().required('Name is required'),
-    email: Yup.string().email('Invalid email').required('Email is required'),
-    password:Yup.string().password("min: 6 required").required("provide your password")
+  username: Yup.string().required('Username is required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
-const FormikForm = () => (
-    <Formik
-        initialValues={{ username: '', email: '' , password:""}}
-        validationSchema={validationSchema}
-        onSubmit={(values) => {
-            console.log(values);
-        }}
-    >
-        {() => (
-            <Form>
-                <Field type="text" name="username" />
-                <ErrorMessage name="username" component="div" />
-                <Field type="email" name="email" />
-                <ErrorMessage name="email" component="div" />
-                <Field type="password" name="password"/>
-                <ErrorMessage name="password" component="div"/>
-                <button type="submit">Submit</button>
-            </Form>
-        )}
-    </Formik>
-);
+export default function FormikForm() {
+  const initialValues = { username: '', email: '', password: '' };
 
-export default FormikForm;
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log('Formik submitting:', values);
+    // Simulate API call here
+    setSubmitting(false);
+  };
+
+  return (
+    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      <Form>
+        <div>
+          <label>Username:</label>
+          <Field name="username" />
+          <ErrorMessage name="username" component="span" />
+        </div>
+        <div>
+          <label>Email:</label>
+          <Field name="email" type="email" />
+          <ErrorMessage name="email" component="span" />
+        </div>
+        <div>
+          <label>Password:</label>
+          <Field name="password" type="password" />
+          <ErrorMessage name="password" component="span" />
+        </div>
+        <button type="submit">Register</button>
+      </Form>
+    </Formik>
+  );
+}
